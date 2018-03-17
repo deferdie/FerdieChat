@@ -1382,7 +1382,7 @@ function localstorage() {
   } catch (e) {}
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
 
 /***/ }),
 /* 5 */
@@ -1574,7 +1574,7 @@ function localstorage() {
   } catch (e) {}
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
 
 /***/ }),
 /* 6 */
@@ -1677,6 +1677,12 @@ module.exports = emptyFunction;
 /* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
+module.exports = __webpack_require__(51);
+
+/***/ }),
+/* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 
@@ -1775,10 +1781,10 @@ utils.forEach(['post', 'put', 'patch'], function forEachMethodWithData(method) {
 
 module.exports = defaults;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(10)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)))
 
 /***/ }),
-/* 10 */
+/* 11 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -1968,7 +1974,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -2382,7 +2388,7 @@ function error(msg) {
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {// browser shim for xmlhttprequest module
@@ -2426,7 +2432,7 @@ module.exports = function (opts) {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
@@ -2589,7 +2595,7 @@ Transport.prototype.onClose = function () {
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2603,7 +2609,7 @@ if (false) {
 
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2662,7 +2668,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 module.exports = invariant;
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2730,7 +2736,7 @@ if (true) {
 module.exports = warning;
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -19832,10 +19838,10 @@ module.exports = warning;
   }
 }.call(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(18)(module)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(19)(module)))
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -19863,7 +19869,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22383,7 +22389,7 @@ Popper.Defaults = Defaults;
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
@@ -32754,12 +32760,6 @@ return jQuery;
 
 
 /***/ }),
-/* 21 */
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__(51);
-
-/***/ }),
 /* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -33342,7 +33342,7 @@ function isBuf(obj) {
 var eio = __webpack_require__(76);
 var Socket = __webpack_require__(37);
 var Emitter = __webpack_require__(2);
-var parser = __webpack_require__(11);
+var parser = __webpack_require__(12);
 var on = __webpack_require__(38);
 var bind = __webpack_require__(39);
 var debug = __webpack_require__(5)('socket.io-client:manager');
@@ -33917,7 +33917,7 @@ Manager.prototype.onreconnect = function () {
  * Module dependencies
  */
 
-var XMLHttpRequest = __webpack_require__(12);
+var XMLHttpRequest = __webpack_require__(13);
 var XHR = __webpack_require__(79);
 var JSONP = __webpack_require__(86);
 var websocket = __webpack_require__(87);
@@ -33977,7 +33977,7 @@ function polling (opts) {
  * Module dependencies.
  */
 
-var Transport = __webpack_require__(13);
+var Transport = __webpack_require__(14);
 var parseqs = __webpack_require__(6);
 var parser = __webpack_require__(3);
 var inherit = __webpack_require__(7);
@@ -33995,7 +33995,7 @@ module.exports = Polling;
  */
 
 var hasXHR2 = (function () {
-  var XMLHttpRequest = __webpack_require__(12);
+  var XMLHttpRequest = __webpack_require__(13);
   var xhr = new XMLHttpRequest({ xdomain: false });
   return null != xhr.responseType;
 })();
@@ -34319,7 +34319,7 @@ module.exports = function(arr, obj){
  * Module dependencies.
  */
 
-var parser = __webpack_require__(11);
+var parser = __webpack_require__(12);
 var Emitter = __webpack_require__(2);
 var toArray = __webpack_require__(89);
 var on = __webpack_require__(38);
@@ -34799,11 +34799,11 @@ module.exports = function(obj, fn){
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -34826,13 +34826,13 @@ var Friends = function (_Component) {
         var _this = _possibleConstructorReturn(this, (Friends.__proto__ || Object.getPrototypeOf(Friends)).call(this, props));
 
         _this.showChat = _this.showChat.bind(_this);
+        _this.updateBadge = _this.updateBadge.bind(_this);
 
         _this.state = {
             users: [],
-            user: null
+            user: _this.props.getUser()
         };
 
-        _this.getUsers();
         return _this;
     }
 
@@ -34840,20 +34840,36 @@ var Friends = function (_Component) {
         key: 'componentDidMount',
         value: function componentDidMount() {
             var self = this;
+            this.getUsers();
 
             Echo.channel('userSignedIn').listen('UserSignedIn', function (e) {
                 self.addUser(e.user);
             }).listen('UserSignedOut', function (e) {
-                console.log('removing user');
                 self.removeUser(e.user);
             });
+
+            this.state.user.discussion.map(function (discussion, index) {
+                Echo.join('room.' + discussion.chat_room_id).listen('MessageWasSent', function (e) {
+                    self.updateBadge(discussion);
+                });
+            });
+        }
+    }, {
+        key: 'updateBadge',
+        value: function updateBadge(discussion) {
+            console.log(discussion.foreign_id);
+            console.log(discussion.foreign_id);
+            if (discussion.foreign_id != this.state.user.id) {
+                return 1;
+            } else {
+                return 0;
+            }
         }
     }, {
         key: 'showChat',
         value: function showChat(user) {
             var self = this;
             __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('/getChat', { user: user }).then(function (response) {
-                console.log;
                 self.props.setRoom(response.data);
             }).catch(function (error) {
                 console.log(error);
@@ -34873,23 +34889,8 @@ var Friends = function (_Component) {
             });
         }
     }, {
-        key: 'setUser',
-        value: function setUser() {
-            var self = this;
-
-            __WEBPACK_IMPORTED_MODULE_2_axios___default.a.get('/user').then(function (response) {
-                self.setState({
-                    user: response.data
-                });
-            }).catch(function (error) {
-                console.log(error);
-            });
-        }
-    }, {
         key: 'addUser',
         value: function addUser(user) {
-            console.log(user);
-
             var newFriends = this.state.users;
 
             var index = _.findIndex(newFriends, { id: user.id });
@@ -34905,8 +34906,6 @@ var Friends = function (_Component) {
     }, {
         key: 'removeUser',
         value: function removeUser(user) {
-            console.log(user);
-
             var removeFriend = this.state.users;
 
             var index = _.findIndex(removeFriend, { id: user.id });
@@ -34922,20 +34921,25 @@ var Friends = function (_Component) {
         value: function render() {
 
             var self = this;
-
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 null,
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'ul',
-                    { 'class': 'list-group' },
+                    { className: "list-group" },
                     this.state.users.map(function (user, index) {
                         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'li',
-                            { 'class': 'list-group-item', onClick: function onClick() {
+                            { key: index, className: "list-group-item", onClick: function onClick() {
                                     return self.showChat(user);
                                 } },
-                            user.name
+                            user.name,
+                            ' ',
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                                'span',
+                                { className: "badge badge-primary" },
+                                self.updateBadge(user.discussion)
+                            )
                         );
                     })
                 )
@@ -35083,8 +35087,8 @@ module.exports = emptyObject;
 
 
 if (true) {
-  var invariant = __webpack_require__(15);
-  var warning = __webpack_require__(16);
+  var invariant = __webpack_require__(16);
+  var warning = __webpack_require__(17);
   var ReactPropTypesSecret = __webpack_require__(92);
   var loggedTypeFailures = {};
 }
@@ -35201,7 +35205,7 @@ module.exports = __webpack_require__(48);
 
 __webpack_require__(49);
 
-var _ = __webpack_require__(17);
+var _ = __webpack_require__(18);
 
 /**
  * Next, we will create a fresh React component instance and attach it to
@@ -35221,8 +35225,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_echo__ = __webpack_require__(69);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_laravel_echo__);
 
-window._ = __webpack_require__(17);
-window.Popper = __webpack_require__(19).default;
+window._ = __webpack_require__(18);
+window.Popper = __webpack_require__(20).default;
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -35231,7 +35235,7 @@ window.Popper = __webpack_require__(19).default;
  */
 
 try {
-  window.$ = window.jQuery = __webpack_require__(20);
+  window.$ = window.jQuery = __webpack_require__(21);
 
   __webpack_require__(50);
 } catch (e) {}
@@ -35242,7 +35246,7 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = __webpack_require__(21);
+window.axios = __webpack_require__(9);
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
@@ -35286,7 +35290,7 @@ window.Echo = new __WEBPACK_IMPORTED_MODULE_0_laravel_echo___default.a({
   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
   */
 (function (global, factory) {
-	 true ? factory(exports, __webpack_require__(20), __webpack_require__(19)) :
+	 true ? factory(exports, __webpack_require__(21), __webpack_require__(20)) :
 	typeof define === 'function' && define.amd ? define(['exports', 'jquery', 'popper.js'], factory) :
 	(factory((global.bootstrap = {}),global.jQuery,global.Popper));
 }(this, (function (exports,$,Popper) { 'use strict';
@@ -39186,7 +39190,7 @@ Object.defineProperty(exports, '__esModule', { value: true });
 var utils = __webpack_require__(1);
 var bind = __webpack_require__(22);
 var Axios = __webpack_require__(53);
-var defaults = __webpack_require__(9);
+var defaults = __webpack_require__(10);
 
 /**
  * Create an instance of Axios
@@ -39269,7 +39273,7 @@ function isSlowBuffer (obj) {
 "use strict";
 
 
-var defaults = __webpack_require__(9);
+var defaults = __webpack_require__(10);
 var utils = __webpack_require__(1);
 var InterceptorManager = __webpack_require__(62);
 var dispatchRequest = __webpack_require__(63);
@@ -39808,7 +39812,7 @@ module.exports = InterceptorManager;
 var utils = __webpack_require__(1);
 var transformData = __webpack_require__(64);
 var isCancel = __webpack_require__(25);
-var defaults = __webpack_require__(9);
+var defaults = __webpack_require__(10);
 var isAbsoluteURL = __webpack_require__(65);
 var combineURLs = __webpack_require__(66);
 
@@ -40866,7 +40870,7 @@ module.exports = Echo;
  */
 
 var url = __webpack_require__(71);
-var parser = __webpack_require__(11);
+var parser = __webpack_require__(12);
 var Manager = __webpack_require__(32);
 var debug = __webpack_require__(5)('socket.io-client');
 
@@ -41799,7 +41803,7 @@ Socket.protocol = parser.protocol; // this is an int
  */
 
 Socket.Socket = Socket;
-Socket.Transport = __webpack_require__(13);
+Socket.Transport = __webpack_require__(14);
 Socket.transports = __webpack_require__(33);
 Socket.parser = __webpack_require__(3);
 
@@ -42433,7 +42437,7 @@ try {
  * Module requirements.
  */
 
-var XMLHttpRequest = __webpack_require__(12);
+var XMLHttpRequest = __webpack_require__(13);
 var Polling = __webpack_require__(34);
 var Emitter = __webpack_require__(2);
 var inherit = __webpack_require__(7);
@@ -43197,7 +43201,7 @@ function noop() {}
 
 }(this));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18)(module), __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(19)(module), __webpack_require__(0)))
 
 /***/ }),
 /* 84 */
@@ -43621,7 +43625,7 @@ JSONPPolling.prototype.doWrite = function (data, fn) {
  * Module dependencies.
  */
 
-var Transport = __webpack_require__(13);
+var Transport = __webpack_require__(14);
 var parser = __webpack_require__(3);
 var parseqs = __webpack_require__(6);
 var inherit = __webpack_require__(7);
@@ -44046,8 +44050,8 @@ if (true) {
 
 var _assign = __webpack_require__(41);
 var emptyObject = __webpack_require__(42);
-var invariant = __webpack_require__(15);
-var warning = __webpack_require__(16);
+var invariant = __webpack_require__(16);
+var warning = __webpack_require__(17);
 var emptyFunction = __webpack_require__(8);
 var checkPropTypes = __webpack_require__(43);
 
@@ -45427,9 +45431,9 @@ if (true) {
   (function() {
 'use strict';
 
-var React = __webpack_require__(14);
-var invariant = __webpack_require__(15);
-var warning = __webpack_require__(16);
+var React = __webpack_require__(15);
+var invariant = __webpack_require__(16);
+var warning = __webpack_require__(17);
 var ExecutionEnvironment = __webpack_require__(94);
 var _assign = __webpack_require__(41);
 var emptyFunction = __webpack_require__(8);
@@ -61329,12 +61333,12 @@ module.exports = camelize;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Friends__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_axios__ = __webpack_require__(21);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_axios__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_axios__);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -61358,14 +61362,17 @@ var Chat = function (_Component) {
         var _this = _possibleConstructorReturn(this, (Chat.__proto__ || Object.getPrototypeOf(Chat)).call(this, props));
 
         _this.setRoom = _this.setRoom.bind(_this);
+        _this.sendMessage = _this.sendMessage.bind(_this);
 
-        _this.setUser();
+        var element = document.getElementById('chat-app');
 
         _this.state = {
             messages: [],
-            user: null,
+            user: JSON.parse(element.dataset.user),
             currentRoom: 1
         };
+
+        var self = _this;
         return _this;
     }
 
@@ -61373,19 +61380,31 @@ var Chat = function (_Component) {
         key: 'componentDidMount',
         value: function componentDidMount() {
             var self = this;
-        }
-    }, {
-        key: 'setUser',
-        value: function setUser() {
-            var self = this;
 
-            __WEBPACK_IMPORTED_MODULE_3_axios___default.a.get('/user').then(function (response) {
+            Echo.join('room.' + this.state.currentRoom).here(function (users) {}).joining(function (user) {}).leaving(function (user) {}).listen('MessageWasSent', function (e) {
+
+                var messages = self.state.messages;
+
+                messages.push(e.message);
+
+                self.setState({ messages: messages });
+            });
+
+            // Get the messages for the room
+            __WEBPACK_IMPORTED_MODULE_3_axios___default.a.get('/messages/' + this.state.currentRoom).then(function (response) {
                 self.setState({
-                    user: response.data
+                    messages: response.data
                 });
             }).catch(function (error) {
                 console.log(error);
             });
+        }
+    }, {
+        key: 'getUser',
+        value: function getUser() {
+            var element = document.getElementById('chat-app');
+
+            return JSON.parse(element.dataset.user);
         }
     }, {
         key: 'setRoom',
@@ -61396,7 +61415,9 @@ var Chat = function (_Component) {
                 currentRoom: room.id
             });
 
-            Echo.join('room.' + this.state.currentRoom).here(function (users) {
+            Echo.leave('orders');
+
+            Echo.join('room.' + room.id).here(function (users) {
                 console.log(users);
             }).joining(function (user) {
                 console.log(user.name);
@@ -61409,44 +61430,65 @@ var Chat = function (_Component) {
                 messages.push(e.message);
 
                 self.setState({ messages: messages });
+            });
 
-                console.log(self.state.messages);
+            // Get the messages for the room
+            __WEBPACK_IMPORTED_MODULE_3_axios___default.a.get('/messages/' + this.state.currentRoom).then(function (response) {
+                self.setState({
+                    messages: response.data
+                });
+            }).catch(function (error) {
+                console.log(error);
+            });
+        }
+    }, {
+        key: 'sendMessage',
+        value: function sendMessage(message) {
+            var self = this;
+
+            __WEBPACK_IMPORTED_MODULE_3_axios___default.a.post('/message', {
+                message: message,
+                room: self.state.currentRoom
+            }).then(function (response) {}).catch(function (error) {
+                console.log(error);
             });
         }
     }, {
         key: 'render',
         value: function render() {
+            var _this2 = this;
+
             var self = this;
+
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
-                { 'class': 'row' },
+                { className: "row" },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { 'class': 'col-3' },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Friends__["default"], { setRoom: this.setRoom })
+                    { className: "col-3" },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Friends__["default"], { setRoom: this.setRoom, getUser: this.getUser })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { 'class': 'col-md-9' },
+                    { className: "col-md-9 chat-container" },
                     this.state.messages.map(function (message, index) {
                         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'div',
-                            null,
+                            { key: index },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
-                                null,
+                                { className: "chat " + (self.state.user.id == message.user_id ? 'user col-md-11 offset-md-1' : 'foregin col-md-11') },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'div',
-                                    { 'class': 'message user' },
+                                    { className: "message" },
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                         'small',
-                                        { 'class': '', className: "btn-group pull-right " + (self.state.user.id === message.user_id ? 'float-right' : 'float-left') },
+                                        null,
                                         message.user.name
                                     ),
-                                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
                                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                         'p',
-                                        { 'class': '', className: "btn-group pull-right " + (self.state.user.id === message.user_id ? 'float-right' : 'float-left') },
+                                        null,
                                         message.message
                                     )
                                 )
@@ -61454,6 +61496,22 @@ var Chat = function (_Component) {
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null)
                         );
                     })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: "col-md-12" },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                        'p',
+                        null,
+                        'Your message'
+                    ),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { className: "form-control", value: this.state.message, placeholder: 'Your last message maybe?', onKeyPress: function onKeyPress(ev) {
+                            if (ev.key === 'Enter') {
+                                _this2.sendMessage(ev.target.value);
+                                ev.preventDefault();
+                            }
+                        } })
                 )
             );
         }

@@ -10,31 +10,57 @@ export default class Chat extends Component {
         super(props);
 
         this.setRoom = this.setRoom.bind(this);
+        this.sendMessage = this.sendMessage.bind(this);
 
-        this.setUser();
+        const element = document.getElementById('chat-app')
 
         this.state = {
             messages: [],
-            user: null,
-            currentRoom: 1
+            user: JSON.parse(element.dataset.user),
+            currentRoom: 1,
         };
+
+        let self = this;
     }
 
     componentDidMount() {
         let self = this;
-    }
 
-    setUser()
-    {
-        let self = this;
+        Echo.join(`room.${this.state.currentRoom}`)
+            .here((users) => {
 
-        Axios.get('/user').then(function (response) {
+            })
+            .joining((user) => {
+                
+
+            })
+            .leaving((user) => {
+
+            })
+            .listen('MessageWasSent', (e) => {
+
+                let messages = self.state.messages;
+
+                messages.push(e.message);
+
+                self.setState({ messages: messages});
+            })
+
+        // Get the messages for the room
+        Axios.get('/messages/'+this.state.currentRoom).then(function (response) {
             self.setState({
-                user: response.data
+                messages: response.data
             });
         }).catch(function (error) {
             console.log(error);
         })
+    }
+
+    getUser()
+    {
+        const element = document.getElementById('chat-app')
+
+        return JSON.parse(element.dataset.user);
     }
 
     setRoom(room)
@@ -43,9 +69,11 @@ export default class Chat extends Component {
 
         this.setState({
             currentRoom: room.id
-        })
+        });
 
-        Echo.join(`room.${this.state.currentRoom}`)
+        Echo.leave('orders');
+
+        Echo.join(`room.${room.id}`)
             .here((users) => {
                 console.log(users)
             })
@@ -62,29 +90,52 @@ export default class Chat extends Component {
                 messages.push(e.message);
 
                 self.setState({ messages: messages});
-
-                console.log(self.state.messages);
             });
+
+        // Get the messages for the room
+        Axios.get('/messages/'+this.state.currentRoom).then(function (response) {
+            self.setState({
+                messages: response.data
+            });
+        }).catch(function (error) {
+            console.log(error);
+        })
+
+    }
+
+    sendMessage(message)
+    {
+        let self = this;
+
+        Axios.post('/message', {
+            message: message,
+            room: self.state.currentRoom,
+        })
+        .then(function (response) {
+
+        }).catch(function (error) {
+            console.log(error);
+        })
     }
 
     render() {
         let self = this;
+
         return (
-            <div class="row">
-                <div class="col-3">
-                    <Friends setRoom={this.setRoom} />
+            <div className={"row"}>
+                <div className={"col-3"}>
+                    <Friends setRoom={this.setRoom} getUser={this.getUser} />
                 </div>
-                <div class="col-md-9">
+                <div className={"col-md-9 chat-container"}>
                     {this.state.messages.map(function (message, index) {
                         return (
-                           <div>
-                                <div>
-                                    <div class="message user">
-                                        <small class="" className={"btn-group pull-right " + (self.state.user.id === message.user_id ? 'float-right' : 'float-left')}>
+                           <div key={index}>
+                                <div className={"chat " + (self.state.user.id == message.user_id ? 'user col-md-11 offset-md-1' : 'foregin col-md-11')}>
+                                    <div className={"message"}>
+                                        <small>
                                             {message.user.name}
                                         </small>
-                                        <br />
-                                        <p class="" className={"btn-group pull-right " + (self.state.user.id === message.user_id ? 'float-right' : 'float-left')}>
+                                        <p>
                                             {message.message}
                                         </p>
                                     </div>
@@ -93,8 +144,17 @@ export default class Chat extends Component {
                             </div>
                         )
                     })}
-
                 </div>
+                <br />
+                <div className={"col-md-12"}>
+                    <p>Your message</p>
+                        <input className={"form-control"} value={this.state.message} placeholder="Your last message maybe?" onKeyPress={(ev) => {
+                                                                                            if (ev.key === 'Enter') {
+                                                                                            this.sendMessage(ev.target.value)
+                                                                                            ev.preventDefault();
+                                                                                            }
+                                                                                        }} />
+                    </div>
             </div>
         );
     }

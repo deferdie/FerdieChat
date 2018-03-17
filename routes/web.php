@@ -30,4 +30,6 @@ Route::get('/user', function(){
 
 
 Route::post('/getChat', 'ChatController@show');
-Route::get('/newMessage', 'ChatController@newMessage');
+
+Route::get('/messages/{chatRoom}', 'ChatController@index');
+Route::post('/message', 'ChatController@create');

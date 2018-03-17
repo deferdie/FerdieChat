@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    <div id="chat-app"></div>
+                    <div id="chat-app" data-user="{{auth()->user()}}"></div>
                 </div>
             </div>
         </div>

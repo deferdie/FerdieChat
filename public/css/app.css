@@ -10008,3 +10008,20 @@ a.text-dark:focus {
   float: right !important;
 }
 
+.chat {
+  background-color: #00c4ff;
+  border-radius: 5px;
+  padding: 10px;
+  color: #292424;
+}
+
+.foregin {
+  background-color: #458396 !important;
+  color: #fff !important;
+}
+
+.chat-container {
+  max-height: 500px;
+  overflow: scroll;
+}
+

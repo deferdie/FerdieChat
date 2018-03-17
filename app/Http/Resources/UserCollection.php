@@ -19,6 +19,7 @@ class UserCollection extends ResourceCollection
                 return [
                     'id' => $user->id, 
                     'name' => $user->name,
+                    'discussion' => $user->discussion,
                 ];
             }),
         ];
