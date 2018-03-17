@@ -33,3 +33,6 @@ Route::post('/getChat', 'ChatController@show');
 
 Route::get('/messages/{chatRoom}', 'ChatController@index');
 Route::post('/message', 'ChatController@create');
+
+// Avatar
+Route::post('/avatar', 'AvatarController@store');

@@ -18,3 +18,4 @@ var _ = require('lodash');
 
 require('./components/Chat/Friends');
 require('./components/Chat/Chat');
+require('./components/Avatar');
