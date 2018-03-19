@@ -89,7 +89,7 @@ export default class Chat extends Component {
             });
 
             self.scrollToLatestMessage();
-            
+
         }).catch(function (error) {
             console.log(error);
         })
@@ -130,7 +130,7 @@ export default class Chat extends Component {
                     {this.state.messages.map(function (message, index) {
                         return (
                            <div key={index}>
-                                <div className={"chat " + (self.state.user.id == message.user_id ? 'user col-md-11 offset-md-1' : 'foregin col-md-11')}>
+                                <div className={"chat " + (self.state.user.id == message.user_id ? 'user col-md-3 offset-md-9' : 'foregin col-md-3')}>
                                     <div className={"message"}>
                                         <small>
                                             {message.user.name}
@@ -146,18 +146,23 @@ export default class Chat extends Component {
                     })}
                 </div>
                 <br />
-                <div className={"col-md-12"}>
-                    <p>Your message</p>
-                        <input className={"form-control"} 
-                            value={this.state.message}
-                            placeholder="Your last message maybe?"
-                            onKeyPress={(ev) => {
-                                if (ev.key === 'Enter') {
-                                    this.sendMessage(ev.target.value)
-                                    ev.preventDefault();
-                                }
-                            }} />
-                    </div>
+                <div className="col-md-3"></div>
+                <div className={"col-md-8 chatInput"}>
+                    <input className={"form-control"} 
+                        value={this.state.message}
+                        placeholder="Your last message maybe?"
+                        onKeyPress={(ev) => {
+                            if (ev.key === 'Enter') {
+                                this.sendMessage(ev.target.value)
+                                ev.preventDefault();
+                            }
+                        }} />
+                </div>
+                <div className={"col-md-1 chat-icon"}>
+                    <i class="fab fa-telegram-plane fa-lg"></i>
+
+                    <i className={"fa fa-smile fa-lg"}></i>
+                </div>
             </div>
         );
     }

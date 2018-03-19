@@ -75,3 +75,43 @@
 {
   color: grey;
 }
+
+.chatInput
+{
+  margin-top: 20px;
+  height: 20px;
+}
+
+.fa, .fa-smile{
+  margin-left: 10px;
+}
+
+.fa-smile
+{
+  color: #009ba1;
+  margin-top: 29px;
+}
+
+.fa-telegram-plane
+{
+  color: #009ba1;
+  margin-top: 29px;
+}
+
+.chat-icon
+{
+  padding-left: 0px;
+}
+
+.chat-container::-webkit-scrollbar {
+  width: 1em;
+}
+
+.chat-container::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 0px rgba(0, 0, 0, 0.3);
+}
+
+.chat-container::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  outline: 0px solid slategrey;
+}

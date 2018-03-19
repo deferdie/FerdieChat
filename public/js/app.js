@@ -61629,7 +61629,7 @@ var Chat = function (_Component) {
                             { key: index },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                 'div',
-                                { className: "chat " + (self.state.user.id == message.user_id ? 'user col-md-11 offset-md-1' : 'foregin col-md-11') },
+                                { className: "chat " + (self.state.user.id == message.user_id ? 'user col-md-3 offset-md-9' : 'foregin col-md-3') },
                                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                                     'div',
                                     { className: "message" },
@@ -61650,14 +61650,10 @@ var Chat = function (_Component) {
                     })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('br', null),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('div', { className: 'col-md-3' }),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
-                    { className: "col-md-12" },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        'p',
-                        null,
-                        'Your message'
-                    ),
+                    { className: "col-md-8 chatInput" },
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { className: "form-control",
                         value: this.state.message,
                         placeholder: 'Your last message maybe?',
@@ -61667,6 +61663,12 @@ var Chat = function (_Component) {
                                 ev.preventDefault();
                             }
                         } })
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+                    'div',
+                    { className: "col-md-1 chat-icon" },
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { 'class': 'fab fa-telegram-plane fa-lg' }),
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: "fa fa-smile fa-lg" })
                 )
             );
         }
