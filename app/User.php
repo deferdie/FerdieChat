@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'logged_in'
+        'name', 'email', 'password', 'logged_in', 'avatar'
     ];
 
     protected $with = ['discussion'];

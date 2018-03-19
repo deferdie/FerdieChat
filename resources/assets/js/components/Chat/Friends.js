@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Axios from 'axios';
+import RoomNotification from './RoomNotification'
 
 export default class Friends extends Component {
 
@@ -8,14 +9,47 @@ export default class Friends extends Component {
 
         super(props);
 
+        let self = this;
+
+        this.onlineBadge = this.onlineBadge.bind(this);
+        this.discussionRoom = this.discussionRoom.bind(this);
         this.showChat = this.showChat.bind(this);
         this.updateBadge = this.updateBadge.bind(this);
 
         this.state = {
             users: [],
-            user: this.props.getUser()
+            user: self.props.getUser(),
         };
 
+    }
+
+    onlineBadge(loggedIn)
+    {
+        if (loggedIn == true)
+        {
+            return <i className="fa fa-circle pull-right" style={{color: "green"}}></i>;
+        }
+        if(loggedIn == false)
+        {
+            return <i className="fa fa-circle pull-right" style={{ color: "grey" }}></i>;
+
+        }
+    }
+
+    discussionRoom(discussions)
+    {
+        let self = this;
+
+        let roomId = null;
+
+        discussions.map(function (discussion) {
+
+            if (discussion.foreign_id === self.props.getUser().id)
+            {
+                roomId = discussion.chat_room_id;
+            }
+        });
+        return roomId;
     }
 
     componentDidMount()
@@ -30,19 +64,10 @@ export default class Friends extends Component {
             .listen('UserSignedOut', (e) => {
                 self.removeUser(e.user);
             });
-
-        this.state.user.discussion.map(function (discussion, index) {
-            Echo.join(`room.${discussion.chat_room_id}`)
-                .listen('MessageWasSent', (e) => {
-                    self.updateBadge (discussion);
-                })
-        })
     }
 
     updateBadge (discussion)
     {
-        console.log(discussion.foreign_id);
-        console.log(discussion.foreign_id);
         if(discussion.foreign_id != this.state.user.id)
         {
             return 1;
@@ -51,8 +76,8 @@ export default class Friends extends Component {
         }
     }
 
-    showChat(user)
-    {
+    showChat(event, user)
+    {   
         let self = this;
         Axios.post('/getChat', {user: user}).then(function (response) {
             self.props.setRoom(response.data);
@@ -110,11 +135,16 @@ export default class Friends extends Component {
                 <ul className={"list-group"}>
 
                     {this.state.users.map(function (user, index) {
+                        console.log('running list')
                         return (
-                            <li key={index} className={"list-group-item"} onClick={() => self.showChat(user)}>
-                                {user.name} <span className={"badge badge-primary"}>
-                                    {self.updateBadge (user.discussion)}
-                                </span>
+                            <li key={index} className={"list-group-item"} onClick={() => self.showChat(event, user)}>
+                                <img width="20" src={"http://ferdie.chat/storage/" + user.avatar} /> 
+
+                                <span>{user.name}</span>
+
+                                {self.onlineBadge(user.logged_in)}
+
+                                {<RoomNotification room={self.discussionRoom(user.discussion)} />}
                             </li>
                         )
                     })}

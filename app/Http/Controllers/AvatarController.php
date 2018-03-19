@@ -8,9 +8,15 @@ class AvatarController extends Controller
 {
     public function store(Request $request)
     {
-        $file = $request->avatar;
-        dd($request->input('avatar'));
+        $file = $request->file('avatar');
+
         $path = $file->store('images', 'public');
+
+        $user = auth()->user();
+
+        $user->avatar = $path;
+
+        $user->save();
 
         return $path;
     }

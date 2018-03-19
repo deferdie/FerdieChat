@@ -23,7 +23,7 @@ export default class Avatar extends Component
         }
 
         var formData = new FormData();
-        formData.append("avatar", file.files[0].name);
+        formData.append("avatar", file.files[0]);
 
         Axios.post('/avatar', formData, {
             headers: {

@@ -16,6 +16,7 @@ var _ = require('lodash');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+require('./components/Chat/RoomNotification');
 require('./components/Chat/Friends');
 require('./components/Chat/Chat');
 require('./components/Avatar');

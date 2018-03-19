@@ -26,25 +26,7 @@ export default class Chat extends Component {
     componentDidMount() {
         let self = this;
 
-        Echo.join(`room.${this.state.currentRoom}`)
-            .here((users) => {
-
-            })
-            .joining((user) => {
-                
-
-            })
-            .leaving((user) => {
-
-            })
-            .listen('MessageWasSent', (e) => {
-
-                let messages = self.state.messages;
-
-                messages.push(e.message);
-
-                self.setState({ messages: messages});
-            })
+        self.setRoom({id:1});
 
         // Get the messages for the room
         Axios.get('/messages/'+this.state.currentRoom).then(function (response) {
@@ -58,7 +40,7 @@ export default class Chat extends Component {
 
     getUser()
     {
-        const element = document.getElementById('chat-app')
+        const element = document.getElementById('chat-app');
 
         return JSON.parse(element.dataset.user);
     }
@@ -81,7 +63,8 @@ export default class Chat extends Component {
                 console.log(user.name);
             })
             .leaving((user) => {
-                console.log(user.name);
+                console.log(user);
+                user.logged_in = false;
             })
             .listen('MessageWasSent', (e) => {
 
@@ -123,7 +106,7 @@ export default class Chat extends Component {
 
         return (
             <div className={"row"}>
-                <div className={"col-3"}>
+                <div className={"col-3 friend-list"}>
                     <Friends setRoom={this.setRoom} getUser={this.getUser} />
                 </div>
                 <div className={"col-md-9 chat-container"}>

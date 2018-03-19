@@ -20,6 +20,8 @@ class UserCollection extends ResourceCollection
                     'id' => $user->id, 
                     'name' => $user->name,
                     'discussion' => $user->discussion,
+                    'avatar' => $user->avatar,
+                    'logged_in' => $user->logged_in,
                 ];
             }),
         ];

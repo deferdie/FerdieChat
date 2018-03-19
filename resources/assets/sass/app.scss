@@ -38,5 +38,30 @@
 .chat-container
 {
   max-height: 500px;
-  overflow: scroll;
+  overflow-x: hidden !important;
+}
+
+.friend-list
+{
+  padding: 0px !important;
+  background-color: #009ba1;
+
+}
+
+.list-group-item
+{
+  border-radius: 0px !important;
+}
+
+.list-group-item:hover{
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.card-body
+{
+  margin-top:0px !important;
+  padding: 14px !important;
+    padding-top:0px !important;
+
 }

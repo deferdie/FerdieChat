@@ -18,6 +18,6 @@ Broadcast::channel('App.User.{id}', function ($user, $id) {
 
 Broadcast::channel('room.{roomId}', function ($user) {
     if (true) {
-        return ['id' => $user->id, 'name' => $user->name];
+        return $user->toArray();
     }
 });
