@@ -34935,7 +34935,7 @@ var Friends = function (_Component) {
         }
     }, {
         key: 'showChat',
-        value: function showChat(event, user) {
+        value: function showChat(user) {
             var self = this;
             __WEBPACK_IMPORTED_MODULE_2_axios___default.a.post('/getChat', { user: user }).then(function (response) {
                 self.props.setRoom(response.data);
@@ -35000,7 +35000,7 @@ var Friends = function (_Component) {
                         return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                             'li',
                             { key: index, className: "list-group-item", onClick: function onClick() {
-                                    return self.showChat(event, user);
+                                    return self.showChat(user);
                                 } },
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('img', { width: '20', src: "http://ferdie.chat/storage/" + user.avatar }),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(

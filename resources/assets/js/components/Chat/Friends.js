@@ -76,7 +76,7 @@ export default class Friends extends Component {
         }
     }
 
-    showChat(event, user)
+    showChat(user)
     {   
         let self = this;
         Axios.post('/getChat', {user: user}).then(function (response) {
@@ -137,7 +137,7 @@ export default class Friends extends Component {
                     {this.state.users.map(function (user, index) {
                         console.log('running list')
                         return (
-                            <li key={index} className={"list-group-item"} onClick={() => self.showChat(event, user)}>
+                            <li key={index} className={"list-group-item"} onClick={() => self.showChat(user)}>
                                 <img width="20" src={"http://ferdie.chat/storage/" + user.avatar} /> 
 
                                 <span>{user.name}</span>
