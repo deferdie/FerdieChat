@@ -49,11 +49,15 @@ export default class Chat extends Component {
     {
         let self = this;
 
+        if (room.id == this.state.currentRoom) {
+            return;
+        }
+
         this.setState({
             currentRoom: room.id
         });
 
-        Echo.leave('orders');
+        Echo.leave(`room.${room.id}`);
 
         Echo.join(`room.${room.id}`)
             .here((users) => {
