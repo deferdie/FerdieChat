@@ -11,6 +11,7 @@ export default class Chat extends Component {
 
         this.setRoom = this.setRoom.bind(this);
         this.sendMessage = this.sendMessage.bind(this);
+        this.scrollToLatestMessage = this.scrollToLatestMessage.bind(this);
 
         const element = document.getElementById('chat-app')
 
@@ -77,6 +78,8 @@ export default class Chat extends Component {
                 messages.push(e.message);
 
                 self.setState({ messages: messages});
+
+                self.scrollToLatestMessage();
             })
 
         // Get the messages for the room
@@ -84,10 +87,20 @@ export default class Chat extends Component {
             self.setState({
                 messages: response.data
             });
+
+            self.scrollToLatestMessage();
+            
         }).catch(function (error) {
             console.log(error);
         })
 
+    }
+
+    scrollToLatestMessage()
+    {
+        let chatContainer = document.getElementById('chat-container');
+
+        chatContainer.scrollTop = chatContainer.scrollHeight;
     }
 
     sendMessage(message)
@@ -113,7 +126,7 @@ export default class Chat extends Component {
                 <div className={"col-3 friend-list"}>
                     <Friends setRoom={this.setRoom} getUser={this.getUser} />
                 </div>
-                <div className={"col-md-9 chat-container"}>
+                <div className={"col-md-9 chat-container"} id="chat-container">
                     {this.state.messages.map(function (message, index) {
                         return (
                            <div key={index}>
