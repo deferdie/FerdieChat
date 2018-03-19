@@ -61607,7 +61607,10 @@ var Chat = function (_Component) {
                         null,
                         'Your message'
                     ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { className: "form-control", value: this.state.message, placeholder: 'Your last message maybe?', onKeyPress: function onKeyPress(ev) {
+                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('input', { className: "form-control",
+                        value: this.state.message,
+                        placeholder: 'Your last message maybe?',
+                        onKeyPress: function onKeyPress(ev) {
                             if (ev.key === 'Enter') {
                                 _this2.sendMessage(ev.target.value);
                                 ev.preventDefault();

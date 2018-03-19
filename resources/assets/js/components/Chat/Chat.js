@@ -135,12 +135,15 @@ export default class Chat extends Component {
                 <br />
                 <div className={"col-md-12"}>
                     <p>Your message</p>
-                        <input className={"form-control"} value={this.state.message} placeholder="Your last message maybe?" onKeyPress={(ev) => {
-                                                                                            if (ev.key === 'Enter') {
-                                                                                            this.sendMessage(ev.target.value)
-                                                                                            ev.preventDefault();
-                                                                                            }
-                                                                                        }} />
+                        <input className={"form-control"} 
+                            value={this.state.message}
+                            placeholder="Your last message maybe?"
+                            onKeyPress={(ev) => {
+                                if (ev.key === 'Enter') {
+                                    this.sendMessage(ev.target.value)
+                                    ev.preventDefault();
+                                }
+                            }} />
                     </div>
             </div>
         );
