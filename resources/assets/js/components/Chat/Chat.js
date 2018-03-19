@@ -61,10 +61,10 @@ export default class Chat extends Component {
 
         Echo.join(`room.${room.id}`)
             .here((users) => {
-                console.log(users)
+                //console.log(users)
             })
             .joining((user) => {
-                console.log(user.name);
+                //console.log(user.name);
             })
             .leaving((user) => {
                 console.log(user);
@@ -77,7 +77,7 @@ export default class Chat extends Component {
                 messages.push(e.message);
 
                 self.setState({ messages: messages});
-            });
+            })
 
         // Get the messages for the room
         Axios.get('/messages/'+this.state.currentRoom).then(function (response) {

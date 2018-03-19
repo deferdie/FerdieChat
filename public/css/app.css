@@ -10045,3 +10045,11 @@ a.text-dark:focus {
   padding-top: 0px !important;
 }
 
+.onlineBadge {
+  color: green;
+}
+
+.offlineBadge {
+  color: grey;
+}
+

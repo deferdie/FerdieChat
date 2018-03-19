@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import Axios from 'axios';
 import RoomNotification from './RoomNotification'
+import UserStatusBadge from './UserStatusBadge'
 
 export default class Friends extends Component {
 
@@ -11,7 +12,6 @@ export default class Friends extends Component {
 
         let self = this;
 
-        this.onlineBadge = this.onlineBadge.bind(this);
         this.discussionRoom = this.discussionRoom.bind(this);
         this.showChat = this.showChat.bind(this);
         this.updateBadge = this.updateBadge.bind(this);
@@ -21,19 +21,6 @@ export default class Friends extends Component {
             user: self.props.getUser(),
         };
 
-    }
-
-    onlineBadge(loggedIn)
-    {
-        if (loggedIn == true)
-        {
-            return <i className="fa fa-circle pull-right" style={{color: "green"}}></i>;
-        }
-        if(loggedIn == false)
-        {
-            return <i className="fa fa-circle pull-right" style={{ color: "grey" }}></i>;
-
-        }
     }
 
     discussionRoom(discussions)
@@ -132,6 +119,9 @@ export default class Friends extends Component {
         let self = this;
         return (
             <div>
+
+                <hr />
+
                 <ul className={"list-group"}>
 
                     {this.state.users.map(function (user, index) {
@@ -142,13 +132,15 @@ export default class Friends extends Component {
 
                                 <span>{user.name}</span>
 
-                                {self.onlineBadge(user.logged_in)}
+                                <UserStatusBadge status={user.logged_in} />
 
                                 {<RoomNotification room={self.discussionRoom(user.discussion)} />}
                             </li>
                         )
                     })}
                 </ul>
+
+                <hr />
             </div>
         );
     }

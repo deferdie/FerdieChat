@@ -35113,6 +35113,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_axios__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__RoomNotification__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__UserStatusBadge__ = __webpack_require__(113);
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -35120,6 +35121,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 
 
 
@@ -35136,7 +35138,6 @@ var Friends = function (_Component) {
 
         var self = _this;
 
-        _this.onlineBadge = _this.onlineBadge.bind(_this);
         _this.discussionRoom = _this.discussionRoom.bind(_this);
         _this.showChat = _this.showChat.bind(_this);
         _this.updateBadge = _this.updateBadge.bind(_this);
@@ -35150,16 +35151,6 @@ var Friends = function (_Component) {
     }
 
     _createClass(Friends, [{
-        key: 'onlineBadge',
-        value: function onlineBadge(loggedIn) {
-            if (loggedIn == true) {
-                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-circle pull-right', style: { color: "green" } });
-            }
-            if (loggedIn == false) {
-                return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: 'fa fa-circle pull-right', style: { color: "grey" } });
-            }
-        }
-    }, {
         key: 'discussionRoom',
         value: function discussionRoom(discussions) {
             var self = this;
@@ -35254,6 +35245,7 @@ var Friends = function (_Component) {
             return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                 'div',
                 null,
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', null),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'ul',
                     { className: "list-group" },
@@ -35270,11 +35262,12 @@ var Friends = function (_Component) {
                                 null,
                                 user.name
                             ),
-                            self.onlineBadge(user.logged_in),
+                            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_4__UserStatusBadge__["default"], { status: user.logged_in }),
                             __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_3__RoomNotification__["default"], { room: self.discussionRoom(user.discussion) })
                         );
                     })
-                )
+                ),
+                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('hr', null)
             );
         }
     }]);
@@ -35315,6 +35308,7 @@ var _ = __webpack_require__(19);
  */
 
 __webpack_require__(41);
+__webpack_require__(113);
 __webpack_require__(45);
 __webpack_require__(107);
 __webpack_require__(108);
@@ -61518,9 +61512,9 @@ var Chat = function (_Component) {
             Echo.leave('room.' + room.id);
 
             Echo.join('room.' + room.id).here(function (users) {
-                console.log(users);
+                //console.log(users)
             }).joining(function (user) {
-                console.log(user.name);
+                //console.log(user.name);
             }).leaving(function (user) {
                 console.log(user);
                 user.logged_in = false;
@@ -61769,6 +61763,55 @@ var Avatar = function (_Component) {
 if (document.getElementById('avatar')) {
     __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render(__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(Avatar, null), document.getElementById('avatar'));
 }
+
+/***/ }),
+/* 109 */,
+/* 110 */,
+/* 111 */,
+/* 112 */,
+/* 113 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(6);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+
+
+
+var UserStatusBadge = function (_Component) {
+    _inherits(UserStatusBadge, _Component);
+
+    function UserStatusBadge(props) {
+        _classCallCheck(this, UserStatusBadge);
+
+        var _this = _possibleConstructorReturn(this, (UserStatusBadge.__proto__ || Object.getPrototypeOf(UserStatusBadge)).call(this, props));
+
+        console.log(_this.props.status);
+        return _this;
+    }
+
+    _createClass(UserStatusBadge, [{
+        key: 'render',
+        value: function render() {
+            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: "fa fa-circle pull-right " + (this.props.status ? 'onlineBadge' : 'offlineBadge') });
+        }
+    }]);
+
+    return UserStatusBadge;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
+
+/* harmony default export */ __webpack_exports__["default"] = (UserStatusBadge);
 
 /***/ })
 /******/ ]);
