@@ -103,9 +103,18 @@ export default class Chat extends Component {
         chatContainer.scrollTop = chatContainer.scrollHeight;
     }
 
-    sendMessage(message)
+    sendMessage()
     {
         let self = this;
+
+        let content = document.getElementById('chat-input');
+
+        let message = null;
+
+        if (content)
+        {
+            message = content.value
+        }
 
         Axios.post('/message', {
             message: message,
@@ -153,14 +162,12 @@ export default class Chat extends Component {
                         placeholder="Your last message maybe?"
                         onKeyPress={(ev) => {
                             if (ev.key === 'Enter') {
-                                this.sendMessage(ev.target.value)
+                                this.sendMessage()
                                 ev.preventDefault();
                             }
-                        }} />
+                        }} id="chat-input" />
                 </div>
                 <div className={"col-md-1 chat-icon"}>
-                    <i class="fab fa-telegram-plane fa-lg"></i>
-
                     <i className={"fa fa-smile fa-lg"}></i>
                 </div>
             </div>

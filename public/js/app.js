@@ -61595,8 +61595,16 @@ var Chat = function (_Component) {
         }
     }, {
         key: 'sendMessage',
-        value: function sendMessage(message) {
+        value: function sendMessage() {
             var self = this;
+
+            var content = document.getElementById('chat-input');
+
+            var message = null;
+
+            if (content) {
+                message = content.value;
+            }
 
             __WEBPACK_IMPORTED_MODULE_3_axios___default.a.post('/message', {
                 message: message,
@@ -61659,15 +61667,14 @@ var Chat = function (_Component) {
                         placeholder: 'Your last message maybe?',
                         onKeyPress: function onKeyPress(ev) {
                             if (ev.key === 'Enter') {
-                                _this2.sendMessage(ev.target.value);
+                                _this2.sendMessage();
                                 ev.preventDefault();
                             }
-                        } })
+                        }, id: 'chat-input' })
                 ),
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     'div',
                     { className: "col-md-1 chat-icon" },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { 'class': 'fab fa-telegram-plane fa-lg' }),
                     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement('i', { className: "fa fa-smile fa-lg" })
                 )
             );
